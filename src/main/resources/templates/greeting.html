@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org"  lang="en">
+<head>
+    <title>Getting Started</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<center>
+<h1>Guestbook</h1>
+<form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
+    <p>First: <input type="text" th:field="*{first}" /></p>
+    <p>Last: <input type="text" th:field="*{last}" /></p>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+</center>
+</body>
+</html>

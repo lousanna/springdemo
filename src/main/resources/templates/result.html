@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<center>
+<h1>Result</h1>
+<p th:text="'Inserted: ' + ${greeting.first} +  ' ' + ${greeting.last}" />
+<p></p>
+    <h1><p>All Guests</p></h1>
+<p th:text="${all}" />
+<a href="/greeting">Back</a>
+</center>
+</body>
+</html>
