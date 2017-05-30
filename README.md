@@ -1,4 +1,4 @@
 # springdemo
-Spring/JDBC demo
+Spring/JPA demo
 
-A simple guestbook which accepts first and last name from form data and saves via JDBC.
+A simple Spring dependency injection and JPA example.

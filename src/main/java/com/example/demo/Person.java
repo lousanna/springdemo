@@ -1,43 +1,53 @@
 package com.example.demo;
-import java.sql.Timestamp;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * Created by lousanna on 5/25/17.
  */
+
+@Entity
 public class Person {
-    public int id;
-    public String first;
-    public String last;
 
-    public Person() {
-    }
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    public long id;
+    public String firstName;
+    public String lastName;
 
-    public Person(int id, String firstName, String lastName) {
-        this.id = id;
-        this.first = firstName;
-        this.last = lastName;
-    }
+    protected Person() {}
 
-    public long getId(){
-        return this.id;
-    }
-    public String getFirst() {
-        return this.first;
-    }
-    public String getLast() {
-        return this.last;
+    public Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
-    public void setFirst(String first) {
-        this.first = first;
-    }
-
-    public void setLast(String last){
-        this.last = last;
-    }
-
+    @Override
     public String toString() {
         return String.format(
                 "ID= '%d': '%s' '%s'",
-                id, first, last);
+                id, firstName, lastName);
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setFirstName(String f) {
+        this.firstName = f;
+    }
+
+    public void setLastName(String l) {
+        this.lastName = l;
     }
 }

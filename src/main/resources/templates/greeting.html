@@ -6,9 +6,9 @@
 <body>
 <center>
 <h1>Guestbook</h1>
-<form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
-    <p>First: <input type="text" th:field="*{first}" /></p>
-    <p>Last: <input type="text" th:field="*{last}" /></p>
+<form action="#" th:action="@{/greeting}" th:object="${person}" method="post">
+    <p>First: <input type="text" th:field="*{firstName}" /></p>
+    <p>Last: <input type="text" th:field="*{lastName}" /></p>
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 </form>
 </center>
