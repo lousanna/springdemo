@@ -2,7 +2,6 @@ package com.example.demo;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,10 +14,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class PersonController {
+
     private DService ds;
 
     @Autowired
-    //@Qualifier("dservice")
     public PersonController(DService pr) {
         this.ds = pr;
     }
@@ -34,5 +33,10 @@ public class PersonController {
         model.addAttribute("person", ds.addPerson(person.firstName,person.lastName));
         model.addAttribute("all", ds.getAll());
         return "result";
+    }
+
+    public String test(Model model){
+        model.addAttribute("people",ds.getAllPeople());
+        return ds.getAllPeople().toString();
     }
 }

@@ -13,7 +13,6 @@ import java.util.List;
 @Service
 public class PersonService implements DService{
 
-    @Autowired
     private final PersonRepository repo;
 
     @Autowired
@@ -28,7 +27,6 @@ public class PersonService implements DService{
         return a;
     }
 
-    @Transactional
     public String getAll() {
         String toRet="";
         for (Person customer : repo.findAll()) {
@@ -37,12 +35,26 @@ public class PersonService implements DService{
         return toRet;
     }
 
-    @Transactional
+    public List<Person> getAllPeople() {
+        List<Person> toRet = new ArrayList<>();
+        for (Person b : repo.findAll()) {
+            toRet.add(b);
+        }
+        return toRet;
+    }
+
     public Person getPerson(Long id) {
         return repo.findOne(id);
     }
 
-    @Transactional
+    public String getFirstName(String last) {
+        String toRet = "";
+        for (Person b : repo.findByLastName(last)) {
+            toRet = toRet + b.firstName;
+        }
+        return toRet;
+    }
+
     public List<Person> findByLastName(String last) {
         List<Person> toRet = new ArrayList<>();
         for (Person b : repo.findByLastName(last)) {
