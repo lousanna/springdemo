@@ -13,9 +13,9 @@ public class Person {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    public long id;
-    public String firstName;
-    public String lastName;
+    private long id;
+    private String firstName;
+    private String lastName;
 
     protected Person() {}
 
@@ -31,23 +31,29 @@ public class Person {
                 id, firstName, lastName);
     }
 
-    public Long getId() {
-        return id;
-    }
-
     public String getFirstName() {
         return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setFirstName(String f) {
-        this.firstName = f;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public void setLastName(String l) {
-        this.lastName = l;
+    public long getId() {
+        return id;
+
     }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
 }

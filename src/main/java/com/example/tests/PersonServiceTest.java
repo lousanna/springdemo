@@ -58,12 +58,12 @@ public class PersonServiceTest {
     public void callMocked() {
 
         List<Person> people = new ArrayList<Person>();
+        final Model map = Mockito.mock(Model.class);
 
         Person one = new Person("hi", "he");
-        one.id = 1;
+        one.setId(1L);
         Person two = new Person("ha", "ho");
-        two.id = 2;
-
+        two.setId(2L);
         people.add(one);
         people.add(two);
 
@@ -71,12 +71,13 @@ public class PersonServiceTest {
         assertNotNull(personController);
 
         Mockito.when(clientService.getAllPeople()).thenReturn(people);
-        final Model map = Mockito.mock(Model.class);
-        final String returned = personController.test(map);
+
+        final String result = personController.test(map);
 
         Mockito.verify(map).addAttribute("people", people);
-        assertNotNull(returned);
-        System.out.println(clientService.getAllPeople() + "\n" + people.toString());
-        assertEquals(people.toString(), returned);
+        assertNotNull(result);
+
+        //System.out.println(clientService.getAllPeople() + "\n" + people.toString());
+        assertEquals(people.toString(), result);
     }
 }

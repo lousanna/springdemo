@@ -50,7 +50,7 @@ public class PersonService implements DService{
     public String getFirstName(String last) {
         String toRet = "";
         for (Person b : repo.findByLastName(last)) {
-            toRet = toRet + b.firstName;
+            toRet = toRet + b.getFirstName();
         }
         return toRet;
     }

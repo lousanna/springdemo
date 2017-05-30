@@ -12,8 +12,6 @@ import java.util.List;
 public interface DService {
 
     Person addPerson(String f, String l);
-    String getAll();
-
-    String getFirstName(String last);
     List<Person> getAllPeople();
+    String getAll();
 }

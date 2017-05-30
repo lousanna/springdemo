@@ -23,20 +23,21 @@ public class PersonController {
     }
 
     @GetMapping("/greeting")
-    public String greetingForm(Model model) {
+    public String Form(Model model) {
         model.addAttribute("person", new Person());
         return "greeting";
     }
 
     @PostMapping("/greeting")
-    public String greetingSubmit(@ModelAttribute Person person, Model model) {
-        model.addAttribute("person", ds.addPerson(person.firstName,person.lastName));
+    public String Submit(@ModelAttribute Person person, Model model) {
+        model.addAttribute("person", ds.addPerson(person.getFirstName(),person.getLastName()));
         model.addAttribute("all", ds.getAll());
         return "result";
     }
 
     public String test(Model model){
         model.addAttribute("people",ds.getAllPeople());
+        //System.out.println("In controller: " + ds.getAllPeople().toString());
         return ds.getAllPeople().toString();
     }
 }
