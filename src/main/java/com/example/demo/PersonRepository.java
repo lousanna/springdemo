@@ -12,4 +12,5 @@ import org.springframework.stereotype.Repository;
 public interface PersonRepository extends CrudRepository<Person, Long> {
 
     List<Person> findByLastName(String lastName);
+
 }

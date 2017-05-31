@@ -59,6 +59,16 @@
 		</dependency>
 
         <dependency>
+            <groupId>org.springframework.integration</groupId>
+            <artifactId>spring-integration-stream</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.integration</groupId>
+            <artifactId>spring-integration-mqtt</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
         </dependency>
@@ -77,7 +87,14 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.integration</groupId>
+            <artifactId>spring-integration-java-dsl</artifactId>
+            <version>1.0.2.RELEASE</version>
+        </dependency>
+
     </dependencies>
+
 
 	<build>
 		<plugins>
@@ -87,6 +104,8 @@
 			</plugin>
 		</plugins>
 	</build>
+
+
 	<pluginRepositories>
 		<pluginRepository>
 			<id>spring-releases</id>
@@ -94,6 +113,7 @@
 			<url>https://repo.spring.io/libs-release</url>
 		</pluginRepository>
 	</pluginRepositories>
+
 
 
 </project>

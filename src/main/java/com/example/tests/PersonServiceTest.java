@@ -60,9 +60,9 @@ public class PersonServiceTest {
         List<Person> people = new ArrayList<Person>();
         final Model map = Mockito.mock(Model.class);
 
-        Person one = new Person("hi", "he");
+        Person one = new Person("first", "last");
         one.setId(1L);
-        Person two = new Person("ha", "ho");
+        Person two = new Person("John", "Doe");
         two.setId(2L);
         people.add(one);
         people.add(two);
