@@ -1,4 +1,4 @@
 # springdemo
 Spring/JPA demo
 
-A simple Spring dependency injection and JPA example.
+A simple Spring example demonstrating JPA, profiles, and Mockito.
